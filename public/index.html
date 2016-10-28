@@ -9,38 +9,48 @@
 <body>
 
   <div class="app">
-    <div class="app__header">
-      <h1 class="app__header-title">Marvel</h1>
-    </div>
+
+    <nav class="nav-bar">
+      <div class="nav-bar__container">
+        <h1 class="nav-bar__title">Marvel</h1>
+        <div class="nav-bar__search">
+          <input type="text" placeholder="Search" class="nav-bar__input">
+        </div>
+      </div>
+</nav>
+
+
+
 
     <div class="app__container">
 
-      <div class="hero">
-        <figure class="comic__data">
-          <img src="" alt="" />
-          <div class="comic__data-title">
-            <div class="comic__data-year">
+      <div class="sidebar">
+        <figure class="series__details">
+          <img v-bind: src="currentSelection.sprites.front_default"v-bind: alt="currentSelection.name" class="sprite">
+             <div class="series__title">
+                <div class="series__year">
 
             </div>
           </div>
-          <h3 class="fancy-text">Creator</h3>
-          <div class="divider"></div>
+          <h3 class="marker">Creator</h3>
+          <hr class="divider"></hr>
             <ul class="comic__writers"></ul>
-              <li class="comic__writers-names"</li>
+              <li class="comic__writers-names"></li>
           </figure>
         </div>
 
       <div class="app__content">
 
         <div class="comic__characters">
-          <h2 class="comic__characters-header">Characters</h2>
-            <div class="divider"></div>
+          <h2 class="marker">Characters</h2>
+            <hr class="divider"></hr>
             <img class="comic__charachters-pic" src="" alt="" />
             <div class="comic__characters-name">  </div>
           </div>
 
         <div class="comic__issues">
-          <h2 class="comic__issues-header">Comics</h2>
+          <h2 class="marker">Comics</h2>
+            <hr class="divider"></hr>
           <img class="comic__issues-pic" src="" alt="" />
             <div class="comic__issues-number">  </div>
               <div class="comic__issues-title"></div>
