@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>15-Marvel</title>
   <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
   <link rel="stylesheet" href="/app.css">
 </head>
+
 <body>
 
   <div class="app">
@@ -17,60 +19,49 @@
           <input type="text" placeholder="Search" class="nav-bar__input">
         </div>
       </div>
-</nav>
-
-
-
+    </nav>
 
     <div class="app__container">
 
-      <div class="sidebar">
-        <figure class="series__details">
-          <img v-bind: src="currentSelection.sprites.front_default"v-bind: alt="currentSelection.name" class="sprite">
-             <div class="series__title">
-                <div class="series__year">
+      <div class="sidebar__container">
+        <div class="sidebar">
+          <figure class="sidebar__details">
+            <img class="thumbnail" v-bind:src="seriesData.thumbnail.path + '.' + seriesData.thumbnail.extension" alt="">
+            <div class="sidebar__name">{{ seriesData.title }}</div>
+            <div class="sidebar__year">{{ seriesData.startYear }} - {{ seriesData.endYear }}</div>
 
-            </div>
-          </div>
-          <h3 class="marker">Creator</h3>
-          <hr class="divider"></hr>
-            <ul class="comic__writers"></ul>
-              <li class="comic__writers-names"></li>
+            <h3 class="marker">Creators</h3>
+            <hr class="divider"></hr>
+            <ul class="series__creators"></ul>
+            <li class="series__creators--names" v-for="creator in seriesData.creators.items">{{ creator.name }}</li>
           </figure>
         </div>
+      </div>
 
       <div class="app__content">
-
         <div class="comic__characters">
           <h2 class="marker">Characters</h2>
-            <hr class="divider"></hr>
-            <img class="comic__charachters-pic" src="" alt="" />
-            <div class="comic__characters-name">  </div>
-          </div>
+          <hr class="divider"></hr>
+          <img class="comic__charachters-pic" src="" alt="" />
+          <div class="comic__characters-name"> </div>
+        </div>
 
         <div class="comic__issues">
           <h2 class="marker">Comics</h2>
-            <hr class="divider"></hr>
+          <hr class="divider"></hr>
           <img class="comic__issues-pic" src="" alt="" />
-            <div class="comic__issues-number">  </div>
-              <div class="comic__issues-title"></div>
-              <button type="button" name="button">Read More</button>
-            </div>
+          <div class="comic__issues-number"> </div>
+          <div class="comic__issues-title"></div>
+          <button type="button" name="button">Read More</button>
+        </div>
 
         <div class="comic__covers">
           <img class="comic__covers-pic" src="" alt="" />
         </div>
-
-
       </div>
-
-      </div>
-
-
-
-
-
-</div>
+    </div>
+  </div>
   <script src="/app.js" charset="utf-8"></script>
 </body>
+
 </html>
