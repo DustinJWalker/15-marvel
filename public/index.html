@@ -38,27 +38,49 @@
         </div>
       </div>
 
-      <div class="app__content">
-        <div class="comic__characters">
+
+
+
+      <div class="character__content">
+        <div class="characters">
           <h2 class="marker">Characters</h2>
           <hr class="divider"></hr>
-          <img class="comic__charachters-pic" src="" alt="" />
-          <div class="comic__characters-name"> </div>
         </div>
+        <div class="comic__characters-parent">
+          <div class="comic__characters" v-for="character in characters">
 
-        <div class="comic__issues">
+              <div class="pic__parent">
+                <img class="comic__characters-pic" v-bind:src="character.thumbnail.path + '.' + character.thumbnail.extension" v-bind:alt="character.nam" />
+              </div>
+
+            <div class="comic__characters-name">{{ character.name }}</div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="comic__content">
           <h2 class="marker">Comics</h2>
           <hr class="divider"></hr>
-          <img class="comic__issues-pic" src="" alt="" />
+          <div class="comic__issues" v-for="comic in comics">
+          <div class="pic__parent">
+            <img class="comic__issues-pic" v-bind:src="comic.thumbnail.path + '.' + comic.thumbnail.extension" v-bind:alt="comic.name" />
+          </div>
           <div class="comic__issues-number"> </div>
           <div class="comic__issues-title"></div>
           <button type="button" name="button">Read More</button>
         </div>
 
+
         <div class="comic__covers">
           <img class="comic__covers-pic" src="" alt="" />
         </div>
       </div>
+
+
     </div>
   </div>
   <script src="/app.js" charset="utf-8"></script>

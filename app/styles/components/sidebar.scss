@@ -1,0 +1,25 @@
+.sidebar__container  {
+  display: flex;
+  max-width: 20rem;
+}
+
+.sidebar  {
+  &__name {
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
+
+  &__year {
+    padding-left: 1rem;
+  }
+}
+
+
+
+.series__creators--names {
+  padding-left: 1rem;
+}
+
+.thumbnail  {
+  max-width: 100%;
+}

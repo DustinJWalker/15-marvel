@@ -1,10 +1,14 @@
 
 $c-blue: #2c3e50;
 $c-white: #eee;
+$media-phone: (min-width: 500px);
 
 
 @import 'font-awesome/scss/font-awesome';
 @import 'box-sizing';
 @import 'reset';
-@import 'comic';
-@import 'header';
+@import 'components/nav';
+@import 'components/sidebar';
+@import 'components/characters';
+@import 'components/app';
+@import 'components/comic-content';

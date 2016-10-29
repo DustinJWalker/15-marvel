@@ -1,8 +1,20 @@
+.character__content  {
+  max-width: 60%;
+}
+
 .comic__characters-parent {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
 
 }
+
+.pic__parent  {
+  position: relative;
+
+}
+
 .comic__characters-pic  {
-  max-width: 30%;
+  position: absolute;
+
+
 }
