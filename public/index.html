@@ -13,74 +13,64 @@
   <div class="app">
 
     <nav class="nav-bar">
-      <div class="nav-bar__container">
-        <h1 class="nav-bar__title">Marvel</h1>
-        <div class="nav-bar__search">
-          <input type="text" placeholder="Search" class="nav-bar__input">
+      <div class="container">
+        <div class="nav-bar__flex">
+          <h1 class="nav-bar__title">Marvel</h1>
+          <div class="nav-bar__search">
+            <input type="text" placeholder="Search" class="nav-bar__input">
+          </div>
         </div>
       </div>
     </nav>
 
-    <div class="app__container">
+    <div class="app__main">
+      <div class="container">
+        <div class="grid">
 
-      <div class="sidebar__container">
-        <div class="sidebar">
-          <figure class="sidebar__details">
-            <img class="thumbnail" v-bind:src="seriesData.thumbnail.path + '.' + seriesData.thumbnail.extension" alt="">
-            <div class="sidebar__name">{{ seriesData.title }}</div>
-            <div class="sidebar__year">{{ seriesData.startYear }} - {{ seriesData.endYear }}</div>
+          <div class="grid__item grid__item--left">
+            <div class="sidebar">
+              <img class="thumbnail" v-bind:src="seriesData.thumbnail.path + '.' + seriesData.thumbnail.extension" alt="">
+              <div class="sidebar__name">{{ seriesData.title }}</div>
+              <div class="sidebar__year">{{ seriesData.startYear }} - {{ seriesData.endYear }}</div>
 
-            <h3 class="marker">Creators</h3>
-            <hr class="divider"></hr>
-            <ul class="series__creators"></ul>
-            <li class="series__creators--names" v-for="creator in seriesData.creators.items">{{ creator.name }}</li>
-          </figure>
-        </div>
-      </div>
+              <h3 class="marker">Creators</h3>
 
+              <ul class="series__creators"></ul>
+              <li class="series__creators--names" v-for="creator in seriesData.creators.items">{{ creator.name }}</li>
+            </div>
+          </div>
 
+          <div class="grid__item grid__item--right">
+            <h2 class="marker">Characters</h2>
+            <div class="grid">
+              <div class="grid__item" v-for="character in characters">
+                <div class="comic__characters">
 
+                  <div class="pic__parent">
+                    <img class="comic__characters-pic" v-bind:src="character.thumbnail.path + '.' + character.thumbnail.extension" v-bind:alt="character.nam" />
+                  </div>
 
-      <div class="character__content">
-        <div class="characters">
-          <h2 class="marker">Characters</h2>
-          <hr class="divider"></hr>
-        </div>
-        <div class="comic__characters-parent">
-          <div class="comic__characters" v-for="character in characters">
-
-              <div class="pic__parent">
-                <img class="comic__characters-pic" v-bind:src="character.thumbnail.path + '.' + character.thumbnail.extension" v-bind:alt="character.nam" />
+                  <div class="comic__characters-name">{{ character.name }}</div>
+                </div>
               </div>
+            </div>
 
-            <div class="comic__characters-name">{{ character.name }}</div>
+            <h2 class="marker">Comics</h2>
+            <div class="grid">
+              <div class="grid__item">
+                <div class="comic__issues" v-for="comic in comics">
+                  <div class="pic__parent">
+                    <img class="comic__issues-pic" v-bind:src="comic.thumbnail.path + '.' + comic.thumbnail.extension" v-bind:alt="comic.name" />
+                  </div>
+                  <div class="comic__issues-number"> </div>
+                  <div class="comic__issues-title"></div>
+                  <button type="button" name="button">Read More</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-
-
-
-
-      <div class="comic__content">
-          <h2 class="marker">Comics</h2>
-          <hr class="divider"></hr>
-          <div class="comic__issues" v-for="comic in comics">
-          <div class="pic__parent">
-            <img class="comic__issues-pic" v-bind:src="comic.thumbnail.path + '.' + comic.thumbnail.extension" v-bind:alt="comic.name" />
-          </div>
-          <div class="comic__issues-number"> </div>
-          <div class="comic__issues-title"></div>
-          <button type="button" name="button">Read More</button>
-        </div>
-
-
-        <div class="comic__covers">
-          <img class="comic__covers-pic" src="" alt="" />
-        </div>
-      </div>
-
-
     </div>
   </div>
   <script src="/app.js" charset="utf-8"></script>
