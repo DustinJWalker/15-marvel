@@ -3,12 +3,10 @@
   color: $c-white;
 
 
-  &__container {
+  &__flex {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 65rem;
-    margin: 0;
   }
 
   &__title {

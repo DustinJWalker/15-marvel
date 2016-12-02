@@ -17,25 +17,18 @@ li {
   list-style-type: none;
 }
 
-.marker  {
-  font-family: 'Permanent Marker', cursive;
+input {
+  outline: none;
 }
 
-button {
+.marker  {
+  font-family: 'Permanent Marker', cursive;
+  border-bottom: 1px solid black;
+}
+
+.btn {
   border: 0;
   border-radius: 0.4rem;
   background: $c-blue;
   color: $c-white;
-
 }
-
-.app__container  {
-  display: flex;
-  justify-content: space-around;
-  max-width: 100%;
-}
-
-// .divider  {
-//   width: 100%;
-//
-// }

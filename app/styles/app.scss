@@ -7,8 +7,20 @@ $media-phone: (min-width: 500px);
 @import 'font-awesome/scss/font-awesome';
 @import 'box-sizing';
 @import 'reset';
+@import 'grid';
 @import 'components/nav';
-@import 'components/sidebar';
-@import 'components/characters';
 @import 'components/app';
-@import 'components/comic-content';
+@import 'components/sidebar';
+// @import 'components/characters';
+// @import 'components/comic-content';
+
+.container {
+  width: 100%;
+  max-width: 65rem;
+  margin: auto;
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+}

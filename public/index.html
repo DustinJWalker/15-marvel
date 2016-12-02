@@ -16,9 +16,9 @@
       <div class="container">
         <div class="nav-bar__flex">
           <h1 class="nav-bar__title">Marvel</h1>
-          <div class="nav-bar__search">
-            <input type="text" placeholder="Search" class="nav-bar__input">
-          </div>
+          <form class="nav-bar__search" v-on:submit.prevent="searchSeries(searchTerm)">
+            <input type="text" placeholder="Search" class="nav-bar__input" v-model="searchTerm">
+          </form>
         </div>
       </div>
     </nav>
@@ -47,7 +47,7 @@
                 <div class="comic__characters">
 
                   <div class="pic__parent">
-                    <img class="comic__characters-pic" v-bind:src="character.thumbnail.path + '.' + character.thumbnail.extension" v-bind:alt="character.nam" />
+                    <img class="comic__characters-pic" v-bind:src="character.thumbnail.path + '.' + character.thumbnail.extension" v-bind:alt="character.name" />
                   </div>
 
                   <div class="comic__characters-name">{{ character.name }}</div>
@@ -57,14 +57,14 @@
 
             <h2 class="marker">Comics</h2>
             <div class="grid">
-              <div class="grid__item">
-                <div class="comic__issues" v-for="comic in comics">
+              <div class="grid__item" v-for="comic in comics">
+                <div class="comic__issues">
                   <div class="pic__parent">
                     <img class="comic__issues-pic" v-bind:src="comic.thumbnail.path + '.' + comic.thumbnail.extension" v-bind:alt="comic.name" />
                   </div>
-                  <div class="comic__issues-number"> </div>
-                  <div class="comic__issues-title"></div>
-                  <button type="button" name="button">Read More</button>
+                  <div class="comic__issues-number">{{ comic.issueNumber }} </div>
+                  <div class="comic__issues-title">{{ comic.series.name }}</div>
+                  <button class="btn" v-on:click="showDescription(comic.description)">Read More</button>
                 </div>
               </div>
             </div>

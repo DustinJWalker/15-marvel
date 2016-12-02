@@ -1,11 +1,8 @@
-.app  {
+.app {
   display: flex;
   flex-direction: column;
 
-}
-
-.app__container   {
-  display: flex;
-  flex-direction: row;
-
+  &__main {
+    padding: 1rem;
+  }
 }

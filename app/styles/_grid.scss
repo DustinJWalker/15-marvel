@@ -1,0 +1,22 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -1rem;
+
+  &__item {
+    flex-basis: calc(100% / 4 - 2rem);
+    flex-grow: 1;
+    margin: 1rem;
+
+    &--left {
+      flex-basis: calc(100% / 3 - 2rem);
+    }
+
+    &--right {
+      flex-basis: calc(2 * 100% / 3 - 2rem);
+      margin: 0 auto;
+
+
+    }
+  }
+}

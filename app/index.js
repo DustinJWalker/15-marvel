@@ -9,6 +9,7 @@ const app = new Vue({
     return {
       seriesData: null,
       characters: null,
+      comics: null,
     };
   },
 
@@ -34,7 +35,7 @@ const app = new Vue({
         });
     },
 
-    searchComics(id) {
+    searchComics(series) {
       fetch(`http://gateway.marvel.com/v1/public/series/${series.id}/comics?apikey=${apiKey}`)
       .then((r) => r.json())
       .then((data) => {
