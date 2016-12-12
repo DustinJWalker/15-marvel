@@ -6,11 +6,19 @@
   <title>15-Marvel</title>
   <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
   <link rel="stylesheet" href="/app.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
 
   <div class="app">
+
+    <div class="modal" v-if="modalDescription">
+      <div class="modal__card">
+        <button class="modal__btn" v-on:click="hideModal" type="submit"></button>
+        <p v-html="modalDescription"></p>
+      </div>
+    </div>
 
     <nav class="nav-bar">
       <div class="container">
