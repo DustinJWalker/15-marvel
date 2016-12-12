@@ -10,6 +10,8 @@ const app = new Vue({
       seriesData: null,
       characters: null,
       comics: null,
+      modalDescription: false,
+      searchTerm: '',
     };
   },
 
@@ -24,6 +26,7 @@ const app = new Vue({
         .then((data) => {
           this.seriesData = data.data.results[0];
           this.searchCharacters(this.seriesData);
+          this.searchComics(this.seriesData);
         });
     },
 
@@ -41,6 +44,13 @@ const app = new Vue({
       .then((data) => {
         this.comics = data.data.results;
       });
+    },
+
+    showDescription(description) {
+      this.modalDescription = description;
+    },
+    hideModal() {
+      this.modalDescription = null;
     },
   },
 });
