@@ -1,5 +1,6 @@
 body {
   margin: 0;
+
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -30,5 +31,18 @@ input {
   border: 0;
   border-radius: 0.4rem;
   background: $c-blue;
-  color: $c-white;
+
+  font-family: 'Permanent Marker', cursive;
+
+}
+
+.app__container {
+  max-width: 65rem;
+}
+
+.divider {
+  width: 20rem;
+  margin: 2rem auto;
+
+
 }
