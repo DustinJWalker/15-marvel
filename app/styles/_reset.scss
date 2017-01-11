@@ -1,5 +1,37 @@
 body {
   margin: 0;
+
+  font-family: 'Open Sans', sans-serif;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 0.4rem;
+}
+
+ul  {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+input {
+  outline: none;
+}
+
+.marker  {
+  font-family: 'Permanent Marker', cursive;
+  border-bottom: 1px solid black;
+}
+
+.btn {
+  border: 0;
+  border-radius: 0.4rem;
+  background: $c-blue;
+
   font-family: 'Permanent Marker', cursive;
 
 }
@@ -11,5 +43,6 @@ body {
 .divider {
   width: 20rem;
   margin: 2rem auto;
+
 
 }

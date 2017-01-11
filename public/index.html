@@ -1,11 +1,90 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>15-Marvel</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+
+
   <link rel="stylesheet" href="/app.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
+
+  <div class="app">
+
+    <div class="modal" v-if="modalDescription">
+      <div class="modal__card">
+        <button class="modal__btn" v-on:click="hideModal" type="submit">X</button>
+        <p v-html="modalDescription"></p>
+      </div>
+    </div>
+
+    <nav class="nav-bar">
+      <div class="container">
+        <div class="nav-bar__flex">
+          <h1 class="nav-bar__title">Marvel</h1>
+          <form class="nav-bar__search" v-on:submit.prevent="searchSeries(searchTerm)">
+            <input type="text" placeholder="Search" class="nav-bar__input" v-model="searchTerm">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="app__main">
+      <div class="container">
+        <div class="grid">
+
+          <div class="grid__item grid__item--left">
+            <div class="sidebar">
+              <img class="thumbnail" v-bind:src="seriesData.thumbnail.path + '.' + seriesData.thumbnail.extension" alt="">
+              <div class="sidebar__name">{{ seriesData.title }}</div>
+              <div class="sidebar__year">{{ seriesData.startYear }} - {{ seriesData.endYear }}</div>
+
+              <h3 class="marker">Creators</h3>
+
+              <ul class="series__creators"></ul>
+              <li class="series__creators--names" v-for="creator in seriesData.creators.items">{{ creator.name }}</li>
+            </div>
+          </div>
+
+          <div class="grid__item grid__item--right">
+            <h2 class="marker">Characters</h2>
+            <div class="grid">
+              <div class="grid__item" v-for="character in characters">
+                <div class="comic__characters">
+
+                  <div class="pic__parent">
+                    <img class="comic__characters-pic" v-bind:src="character.thumbnail.path + '.' + character.thumbnail.extension" v-bind:alt="character.name" />
+                  </div>
+
+                  <div class="comic__characters-name">{{ character.name }}</div>
+                </div>
+              </div>
+            </div>
+
+            <h2 class="marker">Comics</h2>
+            <div class="grid">
+              <div class="grid__item" v-for="comic in comics">
+                <div class="comic__issues">
+                  <div class="pic__parent">
+                    <img class="comic__issues-pic" v-bind:src="comic.thumbnail.path + '.' + comic.thumbnail.extension" v-bind:alt="comic.name" />
+                  </div>
+                  <div class="comic__issues-number">{{ comic.issueNumber }} </div>
+                  <div class="comic__issues-title">{{ comic.series.name }}</div>
+                  <button class="btn" v-on:click="showDescription(comic.description)">Read More</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="/app.js" charset="utf-8"></script>
 </body>
+
 </html>
